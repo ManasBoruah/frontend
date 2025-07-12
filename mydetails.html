@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Bio-data</title>
+  <style>
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes slideIn {
+      0% { opacity: 0; transform: translateX(100px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+    /* Sparkle effect */
+@keyframes sparkle {
+  0%, 100% {
+    text-shadow: 0 0 5px #f39c12, 0 0 10px #e67e22, 0 0 15px #f1c40f;
+    color: #f39c12;
+  }
+  50% {
+    text-shadow: 0 0 10px #f1c40f, 0 0 20px #e67e22, 0 0 30px #f39c12;
+    color: #e67e22;
+  }
+}
+
+.sparkle {
+  animation: sparkle 1.5s infinite;
+}
+
+
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #2c3e50;
+      --label-color: #34495e;
+      --edit-bg: #f4f6f7;
+      --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #ecf0f1;
+      --label-color: #bdc3c7;
+      --edit-bg: #2c3e50;
+      --box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+    }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f7f7;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    ul {
+      list-style: square;
+    }
+    li a {
+      text-decoration: none;
+      color: #2980b9;
+    }
+    li a:hover {
+      color: #1abc9c;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 40px 20px;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .container {
+      background-color: var(--bg-color);
+      max-width: 700px;
+      margin: auto;
+      padding: 30px;
+      box-shadow: var(--box-shadow);
+      border-radius: 12px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--text-color);
+      margin-bottom: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 20px;
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #3498db;
+      animation: zoomIn 1s ease-in-out;
+    }
+
+    .label {
+      font-weight: bold;
+      color: var(--label-color);
+    }
+
+    [contenteditable] {
+      background-color: var(--edit-bg);
+      border: 1px dashed #bdc3c7;
+      padding: 4px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      min-width: 150px;
+    }
+
+    .section-title {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--text-color);
+      border-bottom: 2px solid #ecf0f1;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 6px;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1abc9c;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .add-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      animation: slideIn 1s ease-in-out;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <div class="container">
+    <img src="IMG_8664.JPG" alt="My Photo">
+    <h1 id="name">Manas Boruah</h1>
+
+    <p class="section-title">My Projects:</p>
+    <ul id="project-list">
+      <li><a href="https://github.com/yourusername/student-management-system" target="_blank" contenteditable="true">Student Management System (C++)</a></li>
+      <li><a href="https://github.com/yourusername/logic-locking-bdd" target="_blank"> Locking with BDD (CUDD Library)</a></li>
+        
+
+          <h2>Logic Locking with BDD (CUDD Library) - Resources</h2>
+        <ul>
+        <li><a href="cudd_code.cpp" download>🧠 C++ Logic Locking Code</a></li>
+        <!-- Upload File Section -->
+<div style="margin-top: 10px;">
+  <label for="logicUpload"><strong>Upload related files:</strong></label><br />
+  <input type="file" id="logicUpload" />
+  <button onclick="uploadLogicFile()" style="
+    padding: 6px 12px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px;
+  ">Upload</button>
+  <p id="uploadedLogicLink" style="margin-top: 5px;"></p>
+</div>
+        <li><a href="circuit.png" target="_blank">🖼️ Circuit Diagram (PNG)</a></li>
+        <!-- Upload File Section -->
+<div style="margin-top: 10px;">
+  <label for="logicUpload"><strong>Upload related files:</strong></label><br />
+  <input type="file" id="logicUpload" />
+  <button onclick="uploadLogicFile()" style="
+    padding: 6px 12px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px;
+  ">Upload</button>
+  <p id="uploadedLogicLink" style="margin-top: 5px;"></p>
+</div>
+        <li><a href="report.pdf" target="_blank">📄 Project Report (PDF)</a></li>
+       <!-- Upload File Section -->
+<div style="margin-top: 10px;">
+  <label for="logicUpload"><strong>Upload related files:</strong></label><br />
+  <input type="file" id="logicUpload" />
+  <button onclick="uploadLogicFile()" style="
+    padding: 6px 12px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px;
+  ">Upload</button>
+  <p id="uploadedLogicLink" style="margin-top: 5px;"></p>
+</div>
+    </ul>
+      <li><a href="https://your-live-demo-link.com" target="_blank" contenteditable="true">Your Web App Live Demo</a></li>
+      <li><a href="https://drive.google.com/your-project-doc.pdf" target="_blank" contenteditable="true">Final Year Project Report (PDF)</a></li>
+    </ul>
+    <button onclick="addProject()" class="add-btn">Add New Project</button>
+
+    <p class="section-title">Contact Info:</p>
+    <p><span class="label">Email:</span> 
+  <span id="email" class="sparkle" contenteditable="true" onclick="clearIfDefaultEmail(this)">your.email@example.com</span>
+</p>
+
+    <p><span class="label">Phone:</span> 
+  <span>+91-</span>
+  <span id="Phone" contenteditable="true" onclick="clearIfDefaultphone(this)">XXXXXXXXXX</span>
+</p>
+
+    <p><span class="label">Education:</span> <span>B.Tech in Computer Science</span></p>
+    <p><span class="label">Skills:</span> <span id="skills" contenteditable="true">C++, Python, Web Development</span></p>
+
+    <p><span class="label">LinkedIn:</span>
+      <a href="https://www.linkedin.com/in/manas-boruah-64b935293/" target="_blank">
+        https://www.linkedin.com/in/manas-boruah-64b935293/
+      </a>
+    </p>
+    <button onclick="saveData()" style="
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+">💾 Save My Bio-data</button>
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+    
+
+    function addProject() {
+      const list = document.getElementById("project-list");
+      const li = document.createElement("li");
+      li.innerHTML = '<a href="#" target="_blank" contenteditable="true"></a>';
+      list.appendChild(li);
+      li.querySelector("a").focus();
+    }
+    function clearIfDefaultEmail(el) {
+    if (el.innerText.trim() === "your.email@example.com") {
+    el.innerText = "";
+    el.classList.remove("sparkle");
+    }
+    }
+    function clearIfDefaultphone(el) {
+    if (el.innerText.trim() === "XXXXXXXXXX") {
+      el.innerText = "";
+    }
+  }
+    function uploadLogicFile() {
+  const fileInput = document.getElementById("logicUpload");
+  const file = fileInput.files[0];
+
+  if (!file) {
+    alert("Please select a file to upload.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("file", file);
+
+  fetch("http://localhost:3000/upload", {
+    method: "POST",
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.url) {
+      document.getElementById("uploadedLogicLink").innerHTML = `
+        ✅ Uploaded: <a href="${data.url}" target="_blank">${file.name}</a>
+      `;
+    } else {
+      alert("Upload failed.");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Upload failed.");
+  });
+}
+
+
+    function saveData() {
+      const data = {
+        name: document.getElementById("name").innerText,
+        email: document.getElementById("email").innerText,
+        phone: document.getElementById("phone").innerText,
+        education: document.getElementById("education").innerText,
+        skills: document.getElementById("skills").innerText,
+        projects: Array.from(document.querySelectorAll("#project-list a")).map(a => ({
+          title: a.innerText,
+          url: a.getAttribute("href")
+        }))
+      };
+
+      fetch("http://localhost:3000/save", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      .then(res => res.json())
+      .then(res => alert(res.message))
+      .catch(err => alert("Error saving data"));
+    }
+
+    function loadData() {
+      fetch("http://localhost:3000/load")
+        .then(res => res.json())
+        .then(data => {
+          if (data.name) document.getElementById("name").innerText = data.name;
+          if (data.email) document.getElementById("email").innerText = data.email;
+          if (data.phone) document.getElementById("phone").innerText = data.phone;
+          if (data.education) document.getElementById("education").innerText = data.education;
+          if (data.skills) document.getElementById("skills").innerText = data.skills;
+
+          if (data.projects && Array.isArray(data.projects)) {
+            const list = document.getElementById("project-list");
+            list.innerHTML = "";
+            data.projects.forEach(project => {
+              const li = document.createElement("li");
+              li.innerHTML = `<a href="${project.url}" target="_blank" contenteditable="true">${project.title}</a>`;
+              list.appendChild(li);
+            });
+          }
+        });
+    }
+
+    window.onload = loadData;
+  </script>
+
+</body>
+</html>
