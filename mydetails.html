@@ -186,7 +186,7 @@
 
     <p class="section-title">My Projects:</p>
     <ul id="project-list">
-      <li><a href="https://github.com/yourusername/student-management-system" target="_blank" contenteditable="true">Student Management System (C++)</a></li>
+      <li><a href="https://github.com/yourusername/student-management-system" download >Student Management System (C++)</a></li>
       <li><a href="https://github.com/yourusername/logic-locking-bdd" target="_blank"> Locking with BDD (CUDD Library)</a></li>
         
 
@@ -241,8 +241,23 @@
   <p id="uploadedLogicLink" style="margin-top: 5px;"></p>
 </div>
     </ul>
-      <li><a href="https://your-live-demo-link.com" target="_blank" contenteditable="true">Your Web App Live Demo</a></li>
-      <li><a href="https://drive.google.com/your-project-doc.pdf" target="_blank" contenteditable="true">Final Year Project Report (PDF)</a></li>
+      <li><a href="https://your-live-demo-link.com" target="_blank">Your Web App Live Demo</a></li>
+      <li><a href="https://drive.google.com/your-project-doc.pdf" target=>Final Year Project Report (PDF)</a></li>
+       <!-- Upload File Section -->
+<div style="margin-top: 10px;">
+  <label for="logicUpload"><strong>Upload related files:</strong></label><br />
+  <input type="file" id="logicUpload" />
+  <button onclick="uploadLogicFile()" style="
+    padding: 6px 12px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 6px;
+  ">Upload</button>
+  <p id="uploadedLogicLink" style="margin-top: 5px;"></p>
+</div>
     </ul>
     <button onclick="addProject()" class="add-btn">Add New Project</button>
 
