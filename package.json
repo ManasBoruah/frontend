@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/ManasBoruah/backend/issues"
   },
-  "homepage": "https://github.com/ManasBoruah/backend#readme"
+  "homepage": "https://github.com/ManasBoruah/backend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
